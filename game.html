@@ -4,7 +4,7 @@
 
     <br><br>
     <h1>agents gams</h1>
-    <h3>Playing Epic Boss Battle</h3>
+    <h3>Playing <span id="game">Unknown</span></h3>
     <br><br>
     <button style="width: 40%; height: 30px; background-color: #0d0d0d; color: white;" id="win">Play Windowed</button>
     <button style="width: 40%; height: 30px; background-color: #0d0d0d; color: white;" id="full">Play Fullscreen</button>
@@ -39,6 +39,19 @@
         document.body.appendChild(iframe)
         
       }
+
+      let params = new URLSearchParams(document.location.search);
+      let name = params.get("g"); // is the string "Jonathan"
+
+      switch (name) {
+        case 'epicbossbattle':
+          document.getElementById('game').innerText = "Epic Boss Battle"
+          break
+        default:
+          document.getElementById('game').innerText = "Unknown"
+          break
+      }
+      
     </script>
     
   </body>

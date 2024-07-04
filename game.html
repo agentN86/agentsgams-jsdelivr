@@ -10,8 +10,10 @@
     <button style="width: 40%; height: 30px; background-color: #0d0d0d; color: white;" id="full">Play Fullscreen</button>
 
     <script>
+      var defaultUrl = ""
+      
       function create() {
-            var url = "https://agentn86.github.io/epicbossbattle/v1.3.3/"
+            var url = defaultUrl
             var win = window.open();
             win.document.body.style.margin = '0';
             win.document.body.style.height = '100%';
@@ -31,7 +33,7 @@
       document.getElementById("win").onclick = function () {
 
         var iframe = document.createElement('iframe')
-        iframe.src = "https://agentn86.github.io/epicbossbattle/v1.3.3/"
+        iframe.src = defaultUrl
         iframe.style.border = "0"
         iframe.style.width = "100%"
         iframe.style.height = "100%"
@@ -41,14 +43,16 @@
       }
 
       let params = new URLSearchParams(document.location.search);
-      let name = params.get("g"); // is the string "Jonathan"
+      let name = params.get("game"); // is the string "Jonathan"
 
       switch (name) {
         case 'epicbossbattle':
           document.getElementById('game').innerText = "Epic Boss Battle"
+          defaultUrl = "https://agentn86.github.io/epicbossbattle/v1.3.3/"
           break
         default:
           document.getElementById('game').innerText = "Unknown"
+          defaultUrl = ""
           break
       }
       

@@ -7,7 +7,27 @@
     <h3>Playing Epic Boss Battle</h3>
     <br><br>
     <button style="width: 40%; height: 30px; background-color: #0d0d0d; color: white;" id="win">Play Windowed</button>
-    <button style="width: 40%; height: 30px; background-color: #0d0d0d; color: white;" id="win">Play Fullscreen</button>
+    <button style="width: 40%; height: 30px; background-color: #0d0d0d; color: white;" id="full">Play Fullscreen</button>
+
+    <script>
+      function create() {
+            var url = "https://agentn86.github.io/epicbossbattle/v1.3.3/"
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100%';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
+
+      document.getElementById("full").onclick = function () {
+        create()
+      }
+    </script>
     
   </body>
 </html>
